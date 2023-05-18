@@ -14,6 +14,7 @@ export class TruncateDescPipe implements PipeTransform {
       return result;
     }
     return result + "...";
+    return desc;
   }
 
 }

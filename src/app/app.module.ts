@@ -9,6 +9,7 @@ import { FirstUpperPipe } from './pipes/first-upper/first-upper.pipe';
 import { GetAgePipe } from './pipes/get-age/get-age.pipe';
 import { TruncateDescPipe } from './pipes/truncate-desc/truncate-desc.pipe';
 import { SpecialButtonDirective } from './directives/special-button/special-button.directive';
+import { CheckAgeDirective } from './directives/check-age/check-age.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SpecialButtonDirective } from './directives/special-button/special-butt
     FirstUpperPipe,
     GetAgePipe,
     TruncateDescPipe,
-    SpecialButtonDirective
+    SpecialButtonDirective,
+    CheckAgeDirective
   ],
   imports: [
     BrowserModule,
@@ -27,4 +29,4 @@ import { SpecialButtonDirective } from './directives/special-button/special-butt
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
