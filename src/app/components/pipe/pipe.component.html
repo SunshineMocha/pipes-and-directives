@@ -1,0 +1,29 @@
+<div>
+  <h3>{{user.username | uppercase}}</h3> <!-- UPPERCASE PIPE, VEDI COMMENTO SOTTO -->
+  <ul>
+    <li>Nome: {{user.name | firstUpper}}</li>
+    <li>Cognome: {{user.surname | firstUpper}}</li>
+    <!-- <li>Anno: {{user.yob}}</li> -->
+    <li>Etá: {{user.yob | getAge}}</li> <!-- cambio anno in etá, data la task -->
+    <li>Descrizione: {{user.description | truncateDesc : 30}}</li>
+    <!-- passando i due punti passo i parametri al mio pipe. pipe : parametro-1 : parametro-n-->
+    <!-- in questo caso voglio che mi cambi il numero di caratteri a scelta, a seconda del carattere, vedere pipe-->
+  </ul>
+</div>
+<!-- I PIPE SERVONO PER MODIFICARE DIRETTAMENTE L'HTML,
+  ESISTONO GIA IN ANGULAR E UNO SI CHIAMA UPPERCASE,
+  CHE ABBIAMO VISTO IN TOUR OF HEROES
+
+  UPPERCASE: TRASFORMA TUTTO IN MAIUSCOLO
+  DATEPIPE: TRASFORMA DATA IN VALORE LEGGIBILE
+  LOWERCASE: ...
+  CURRENCYPIPE: PRENDE UN NUMERO E LO TRASFORMA IN MONETA LOCALE A SECONDA DEL PAESE
+  DECIMALPIPE: TRASFORMA IL PUNTO IN UNA VIRGOLA PER I DECIMALI
+  PERCENTPIPE: TRASFORMA IN UNA PERCENTUALE
+
+  SI POSSONO FARE ANCHE PIPE MANUALI CHE VEDREMO NEL CODICE, QUELLO CHE CI SERVE È IN PIPE.COMPONENT.TS
+
+  PROSEGUE SU PIPE.COMPONENT.TS (1)
+
+  (2) PASSO IL PIPE SU NOME E COGNOME, COMPLETO I TASK ASSEGNATI SU PIPE.COMPONENT.TS E LI PASSO.
+-->
