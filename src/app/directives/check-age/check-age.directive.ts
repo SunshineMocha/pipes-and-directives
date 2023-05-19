@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 
 @Directive({
@@ -5,8 +6,18 @@ import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 })
 export class CheckAgeDirective {
 
-  constructor(private templateRef: TemplateRef<any>, private viewContainer: ViewContainerRef) { }
-  @Input() set appUnless(condition: boolean) {
-    condition = true;
+  hasView = false;
+
+  @Input() set appcheckAge(value: boolean){
+    if(!value && ! this.hasView){
+      this.viewContainer.createEmbeddedView(this.templateRef);
+      this.hasView = true;
+    }else if (value && this.hasView){
+      this.viewContainer.clear();
+      this.hasView = false;
+    }
   }
+
+constructor(private templateRef: TemplateRef<any>, private viewContainer: ViewContainerRef) {}
+
 }
